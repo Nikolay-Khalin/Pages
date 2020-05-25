@@ -15,3 +15,14 @@ function ibg() {
 }
 
 ibg();
+
+$('.tabs__item').click(function () {
+	var id = $(this).attr('data-tab'),
+		content = $('.tabs__body[data-tab="' + id + '"]');
+
+	$('.tabs__item.active').removeClass('active');
+	$(this).addClass('active');
+
+	$('.tabs__body.active').removeClass('active');
+	content.addClass('active');
+});
